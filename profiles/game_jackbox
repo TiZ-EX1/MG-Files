@@ -1,0 +1,22 @@
+# For controlling Jackbox Party Pack and other Jackbox games. As they use
+# Adobe AIR, these games require Wine. Attempting to use dumbxinputwrapper
+# just crashes the game, so a keyboard profile is the next best thing.
+
+[gamepad]
+up = key(key_up)
+down = key(key_down)
+left = key(key_left)
+right = key(key_right)
+updown = axis2btns(key(key_up), key(key_down))
+leftright = axis2btns(key(key_left), key(key_right))
+left_x = axis2btns(key(key_left), key(key_right))
+left_y = axis2btns(key(key_up), key(key_down))
+
+primary = key(key_enter)
+third = key(key_enter)
+secondary = key(key_esc)
+fourth = key(key_esc)
+start = key(key_esc)
+
+# An extra, easier screenshot binding doesn't hurt.
+select = key(key_sysrq)

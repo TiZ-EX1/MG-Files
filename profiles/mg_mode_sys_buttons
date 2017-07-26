@@ -1,0 +1,44 @@
+# What the hell does this do? Well, there aren't any games that actually use
+# the mode button. Steam uses it to activate Big Picture Mode, but no game
+# uses it. That's because it has system-level functionality on their original
+# consoles that games cannot interfere with. So why not co-opt it for system-
+# level functionality on our own "console", Linux?
+#
+# This only works if you have MG's virtual keyboard and mouse enabled.
+# In addition, it only emits relevant keypresses; you'll need to make sure
+# you have something that reacts to them.
+
+[gamepad]
+
+# First, we don't want anything, including Steam, to act on this press.
+mode = nothing
+
+# Steam overlay.
+(mode, start) = exclusive(multi(key(key_leftshift), key(key_tab)))
+
+# Close window. Change this to fit your window manager configuration.
+(mode, select) = exclusive(multi(key(key_leftmeta), key(key_esc)))
+
+# Volume and brightness controls.
+(mode, up) = exclusive(key(key_volumeup))
+(mode, down) = exclusive(key(key_volumedown))
+(mode, right) = exclusive(key(key_brightnessup))
+(mode, left) = exclusive(key(key_brightnessdown))
+
+# Media player controls.
+(mode, primary) = exclusive(key(key_playpause))
+(mode, secondary) = exclusive(key(key_nextsong))
+(mode, third) = exclusive(key(key_previoussong))
+
+# Screenshot.
+(mode, fourth) = exclusive(key(key_sysrq))
+
+# Now here's where it gets interesting: Print Screen exclusives.
+# On my system, I use right alt and printscreen to start recording.
+# I use right shift and print screen to start recording, but with the webcam.
+# And for both of those, if I use left instead of right, I start streaming too.
+# These possibilities are available for you to use however you wish.
+(mode, tr2) = exclusive(multi(key(key_rightalt), key(key_sysrq)))
+(mode, tr) = exclusive(multi(key(key_rightshift), key(key_sysrq)))
+(mode, tl2) = exclusive(multi(key(key_leftalt), key(key_sysrq)))
+(mode, tl) = exclusive(multi(key(key_leftshift), key(key_sysrq)))
