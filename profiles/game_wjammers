@@ -1,0 +1,4 @@
+# Use when playing Windjammers through RetroArch.
+# Makes mappings same as PS4 version.
+gamepad.third = primary
+gamepad.fourth = secondary
